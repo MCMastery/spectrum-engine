@@ -22,6 +22,7 @@ public class Renderer {
     }
 
     public void drawRect(double x, double y, double w, double h, RGBAColor color) {
+        setColor(color);
         g2d.drawRect(MathUtils.round(x), MathUtils.round(y), MathUtils.round(w), MathUtils.round(h));
     }
 }
