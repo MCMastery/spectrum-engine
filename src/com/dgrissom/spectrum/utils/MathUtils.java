@@ -27,4 +27,8 @@ public class MathUtils {
     public static double clamp(double x, double max) {
         return x < 0 ? 0 : (x > max ? max : x);
     }
+
+    public static int round(double x) {
+        return (int) Math.round(x);
+    }
 }

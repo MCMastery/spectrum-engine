@@ -2,6 +2,8 @@ package com.dgrissom.spectrum.rendering;
 
 import com.dgrissom.spectrum.utils.MathUtils;
 
+import java.awt.*;
+
 /**
  * Created by mynam_000 on 3/12/2016.
  */
@@ -44,6 +46,13 @@ public class RGBAColor {
     }
     public RGBAColor setAlpha(double a) {
         return new RGBAColor(this.r, this.g, this.b, a);
+    }
+
+    public Color toJavaColor() {
+        return new Color(MathUtils.round(this.r * 255), MathUtils.round(this.g * 255), MathUtils.round(this.b * 255), MathUtils.round(this.a * 255));
+    }
+    public static RGBAColor fromJavaColor(Color color) {
+        return new RGBAColor(color.getRed() / 255.0, color.getGreen() / 255.0, color.getBlue() / 255.0, color.getAlpha() / 255.0);
     }
 
     public boolean equalsIgnoreAlpha(RGBAColor other) {

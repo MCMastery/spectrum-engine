@@ -1,5 +1,7 @@
 package com.dgrissom.spectrum.rendering;
 
+import com.dgrissom.spectrum.utils.MathUtils;
+
 import java.awt.*;
 
 /**
@@ -15,6 +17,11 @@ public class Renderer {
     public Graphics2D getG2D() {
         return this.g2d;
     }
+    public void setColor(RGBAColor color) {
+        g2d.setColor(color.toJavaColor());
+    }
 
-
+    public void drawRect(double x, double y, double w, double h, RGBAColor color) {
+        g2d.drawRect(MathUtils.round(x), MathUtils.round(y), MathUtils.round(w), MathUtils.round(h));
+    }
 }
